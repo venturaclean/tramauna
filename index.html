@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<!-- ===================== CONFIGURAÇÃO (único sítio a mudar) =====================
+     Reaproveitado de ../pagina/index.html (v2.5).
+     CHECKOUT_URL    link de checkout Hotmart P1. Enquanto for "#CHECKOUT_HOTMART" as etiquetas amarelas do checkout aparecem.
+     PIXEL_ID        ID numérico do pixel da Meta. Enquanto for "[PIXEL_ID]" nenhum pedido é feito à Meta.
+     CONSENT_VERSION versão do aviso de cookies. Incrementar SEMPRE que mudar o uso de cookies.
+     =============================================================================== -->
+<script>
+var CHECKOUT_URL="#CHECKOUT_HOTMART";
+var PIXEL_ID="[PIXEL_ID]";
+var CONSENT_VERSION=1;
+var CONSENT_KEY="tu_cookie_consent_v1";
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- PREVIEW (clone do layout BR): noindex. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:,">
+<title>Trama Una — Teologia Católica para Leigos</title>
+<meta name="description" content="Uma formação de teologia católica para o adulto leigo, escrita em português de Portugal. 17,90 €, pagamento único.">
+<!-- PIXEL DA META — só dispara APÓS CONSENTIMENTO. Sem <noscript>. -->
+<script>
+function tuLoadPixel(){
+if(window.fbq||!/^\d{6,20}$/.test(PIXEL_ID))return;
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',PIXEL_ID);fbq('track','PageView');}
+try{var c=JSON.parse(localStorage.getItem(CONSENT_KEY)||"null");if(c&&c.v===CONSENT_VERSION&&c.choice==="accept")tuLoadPixel()}catch(e){}
+</script>
+<!-- FIM DO PIXEL DA META -->
+<style>
+/* Paleta e ritmo modelados no original (marfim/pergaminho, azul-noite, dourado, bordô). Fontes do sistema (sem Google Fonts: zero pedidos externos). */
+:root{--gold:#C9A84C;--gold-rich:#7E5E22;--gold-light:#E8C97A;--navy:#1A1A2E;--navy2:#0F0F1A;--cream:#FAF3E2;--ivory:#FAFAF7;--parch:#F2F0EB;--rule:#E0DDD8;--text:#1F1F1F;--muted:#4A4A4A;--accent:#8B1A1A;--green:#17784A;
+--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 var(--sans);color:var(--text);background:var(--ivory);-webkit-font-smoothing:antialiased}
+img,svg,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;margin:0}
+h1{font-size:clamp(1.6rem,5.6vw,2.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,4.4vw,2.2rem);letter-spacing:-.01em}
+h3{font-size:1.08rem}
+p{margin:0 0 14px}
+.c{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.n{max-width:720px;margin-left:auto;margin-right:auto}
+section{padding:52px 0}
+.bg-cream{background:var(--cream)}.bg-parch{background:var(--parch)}.bg-white{background:#fff}.bg-ivory{background:var(--ivory)}
+.bg-deep{background:linear-gradient(170deg,#1A1A2E 0%,#0F0F1A 100%);color:#E9E6DF}
+.bg-deep h2,.bg-deep h3{color:#fff}
+.head{text-align:center;max-width:720px;margin:0 auto 28px}
+.tag{display:inline-block;font:700 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.bg-deep .tag{color:var(--gold-light)}
+.desc{color:var(--muted);font-size:15.5px;margin:12px auto 0;max-width:640px}
+.bg-deep .desc{color:#C9C5BC}
+.rule{display:flex;align-items:center;justify-content:center;gap:12px;height:24px;background:var(--ivory)}
+.rule::before,.rule::after{content:"";height:1px;width:min(38%,360px);background:var(--rule)}
+.rule span{color:var(--accent);font-size:12px}
+.center{text-align:center}
+/* botões (pílula, como no original) */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 28px;border-radius:999px;font:700 15.5px/1.25 var(--sans);letter-spacing:.02em;text-decoration:none;text-align:center;background:var(--navy);color:#fff;border:2px solid var(--navy);transition:transform .2s,box-shadow .2s;max-width:100%}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,26,46,.18)}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--navy2)}
+.btn-red{background:var(--accent);border-color:var(--accent)}
+.btn-green{background:var(--green);border-color:var(--green);width:100%}
+.btn-wide{width:100%;max-width:420px}
+.cta{margin:22px 0 4px;text-align:center}
+.ph{background:#ffe94d;color:#000;font:700 12px/1.3 var(--sans);padding:1px 5px;border-radius:3px;outline:1px dashed #b39b00;letter-spacing:0;text-transform:none}
+.ph-block{display:table;margin:8px auto 0}
+.small{font-size:13.5px;color:var(--muted)}
+/* HERO */
+.topbar{background:var(--navy);color:#fff;text-align:center;font:600 12.5px/1.4 var(--sans);letter-spacing:.06em;padding:9px 12px;text-transform:uppercase}
+.topbar b{color:var(--gold-light);font-weight:700}
+.hero{padding:34px 0 40px;text-align:center;border-bottom:1px solid #EAD9B8}
+.mark{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--navy);margin-bottom:10px}
+.mark i{display:block;width:40px;height:1px;background:var(--gold)}
+.hero h1{max-width:820px;margin:0 auto 14px}
+.hero .sub{color:var(--muted);font-size:15.5px;max-width:680px;margin:0 auto 18px}
+.cue{font:600 12.5px/1.4 var(--sans);color:#5f5f5f;margin:0 0 10px}
+.vframe{position:relative;max-width:660px;margin:0 auto;aspect-ratio:16/9;background:#2a0f12;border-radius:6px;overflow:hidden;box-shadow:0 12px 48px rgba(26,26,46,.18)}
+.vframe video{width:100%;height:100%;object-fit:cover}
+.checks{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;font-size:13.5px;color:var(--muted)}
+.checks li::before{content:"✓ ";color:var(--navy);font-weight:700}
+.offer{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 10px;max-width:480px;margin:16px auto 0;padding:12px 0;border-top:1px solid #E5D6B5;border-bottom:1px solid #E5D6B5}
+.offer strong{font:700 1.75rem/1.1 var(--serif);color:var(--navy)}
+.offer small{font:700 11.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.trust{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;font-size:13px;color:var(--muted)}
+.seals{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.seal{font:600 12px/1.3 var(--sans);color:var(--navy);background:#F3EAD3;border:1px solid #E2D2AC;padding:6px 10px;border-radius:2px}
+/* POR DENTRO: ilustração própria em CSS (A4) */
+.mock{position:relative;max-width:760px;margin:0 auto;border-radius:8px;padding:26px 16px;background:linear-gradient(160deg,#3a2a1f,#1f1611);box-shadow:0 12px 48px rgba(26,26,46,.14);display:flex;justify-content:center;gap:14px;overflow:hidden}
+.a4{background:#fffdf8;aspect-ratio:210/297;width:44%;max-width:250px;border-radius:2px;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:7% 7%;font-family:var(--serif);color:#2b2b2b;display:flex;flex-direction:column}
+.a4.cover{background:linear-gradient(170deg,#1A1A2E,#2b2b4a);color:#F3E6C4;text-align:center;justify-content:center;align-items:center}
+.a4 .k{font:700 clamp(7px,1.5vw,10px)/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.a4 .t{font-size:clamp(13px,3vw,22px);line-height:1.15;margin:8px 0}
+.a4 .s{font-size:clamp(7px,1.5vw,10.5px);opacity:.85}
+.a4 .ix{font-size:clamp(7px,1.45vw,10.5px);line-height:1.5;list-style:none;padding:0;margin:6px 0 0}
+.a4 .ix li{display:flex;justify-content:space-between;border-bottom:1px dotted #cbbf9f;padding:2px 0}
+.mock figcaption{position:absolute;right:10px;bottom:6px;font:11px var(--sans);color:#d9cdb3;opacity:.8}
+.pd-line{font-family:var(--serif);font-size:1.08rem;color:var(--navy);text-align:center;max-width:620px;margin:20px auto 0}
+/* PARA QUEM É: cartões 2 colunas */
+.grid2{display:grid;grid-template-columns:1fr;gap:10px;max-width:900px;margin:0 auto}
+.card{background:#fff;border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:3px;padding:16px 16px;display:flex;gap:14px;align-items:flex-start;font-family:var(--serif);font-size:15.5px;color:var(--navy);line-height:1.45}
+.ico{flex:0 0 22px;color:var(--navy);font-size:17px;line-height:1.3;text-align:center}
+.imgcard{position:relative;max-width:320px;margin:24px auto 0;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#5a4220 0%,#2a1d10 60%,#160f08 100%);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.imgcard svg{position:absolute;inset:0;width:100%;height:100%}
+.imgcard p{position:absolute;left:0;right:0;bottom:0;margin:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font:700 14.5px/1.35 var(--serif);text-align:center}
+/* VANTAGENS (dor) */
+.grid4{display:grid;grid-template-columns:1fr;gap:12px;max-width:980px;margin:0 auto}
+.vcard{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:20px 18px;box-shadow:0 2px 20px rgba(26,26,46,.05);display:flex;gap:14px}
+.vcard .num{flex:0 0 34px;height:34px;border:1px solid var(--rule);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--navy)}
+.vcard h3{margin:0 0 6px}
+.vcard p{margin:0;font-size:15px;color:var(--muted)}
+.punch{font-family:var(--serif);font-size:1.25rem;color:var(--navy);text-align:center;max-width:680px;margin:26px auto 0;font-weight:700}
+.after{max-width:720px;margin:12px auto 0;text-align:center;color:var(--muted);font-size:15px}
+/* CURSO / MECANISMO */
+.illu{max-width:360px;margin:0 auto 26px;aspect-ratio:1/1;border-radius:6px;overflow:hidden;position:relative;background:linear-gradient(170deg,#F6EEDB,#EADBB8);box-shadow:0 8px 30px rgba(26,26,46,.12)}
+.illu svg{width:100%;height:100%}
+.illu p{position:absolute;left:0;right:0;bottom:0;margin:0;padding:24px 14px 12px;background:linear-gradient(transparent,rgba(26,26,46,.8));color:#fff;font:700 15px/1.35 var(--serif);text-align:center}
+.lead-i{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;max-width:640px;margin:12px auto 0}
+.goldline{font:700 13.5px/1.45 var(--sans);color:var(--gold-rich);margin:10px auto 0;max-width:560px;text-align:center}
+.acc{max-width:680px;margin:26px auto 0}
+details{background:#fff;border:1px solid var(--rule);border-radius:6px;margin:0 0 8px}
+details[open]{border-color:var(--gold)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 16px;font:700 15.5px/1.35 var(--serif);color:var(--navy)}
+summary::-webkit-details-marker{display:none}
+summary .cue2{font:700 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-rich);white-space:nowrap}
+summary .cue2::after{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:8px;border-radius:50%;background:#F3EAD3;color:var(--navy);font-size:14px}
+details[open] summary .cue2::after{content:"×"}
+.dl{list-style:none;margin:0;padding:4px 16px 14px;border-top:1px solid var(--rule)}
+.dl li{position:relative;padding:6px 0 6px 18px;font-size:15px;color:var(--text)}
+.dl li::before{content:"✦";position:absolute;left:0;top:6px;color:var(--gold);font-size:11px}
+.dp{padding:10px 16px 14px;margin:0;border-top:1px solid var(--rule);font-size:15px}
+.usebox{max-width:560px;margin:22px auto 0;background:var(--parch);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 8px}
+.usebox h3{font-family:var(--sans);font-size:15px;text-align:center;margin-bottom:10px}
+.ok{list-style:none;padding:0;margin:0}
+.ok li{position:relative;padding:3px 0 3px 22px;font-size:14.5px;margin-bottom:6px}
+.ok li::before{content:"✓";position:absolute;left:0;color:var(--gold-rich);font-weight:700}
+.no li::before{content:"✕";color:var(--accent)}
+/* COMO FUNCIONA */
+.steps{list-style:none;padding:0;margin:0 auto;display:grid;grid-template-columns:1fr;gap:12px;max-width:900px}
+.step{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:20px 16px;text-align:center}
+.step .n{width:36px;height:36px;margin:0 auto 10px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font:700 15px var(--serif)}
+.step h3{margin-bottom:6px}
+.step p{margin:0;font-size:14.5px;color:var(--muted)}
+.chips{display:flex;max-width:460px;margin:16px auto 0;border:1px solid var(--rule);border-radius:6px;background:#fff;overflow:hidden}
+.chips span{flex:1;text-align:center;padding:10px 6px;font:700 13px/1.3 var(--serif);color:var(--navy);border-left:1px solid var(--rule)}
+.chips span:first-child{border-left:0}
+.chips span::before{content:"✓ ";color:var(--green)}
+/* PERGUNTAS (carrossel em CSS no telemóvel, grelha no desktop) */
+.qs{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin:0 -20px;padding-left:20px;padding-right:20px;-webkit-overflow-scrolling:touch}
+.q{scroll-snap-align:center;background:#fff;border:1px solid var(--rule);border-radius:6px;padding:22px 20px;box-shadow:0 2px 20px rgba(26,26,46,.05)}
+.q .qn{font:700 1.6rem/1 var(--serif);color:var(--accent);margin-bottom:8px}
+.q h3{margin-bottom:8px}
+.q p{margin:0;font-size:15px;color:var(--muted)}
+.swipe{text-align:center;font-size:12.5px;color:#5f5f5f;margin:2px 0 0}
+/* ESCURA */
+.pills{display:grid;grid-template-columns:1fr;gap:8px;max-width:860px;margin:0 auto}
+.pill{border:1px solid rgba(201,168,76,.35);background:rgba(255,255,255,.04);border-radius:4px;padding:11px 14px;font:600 14px/1.4 var(--sans);color:#F1EEE7}
+.pill::before{content:"✓ ";color:var(--gold-light)}
+.goldbox{max-width:520px;margin:20px auto 0;border:1px solid var(--gold);border-radius:4px;background:rgba(201,168,76,.08);padding:16px 18px;text-align:center}
+.goldbox p{margin:0}
+.goldbox .g1{font:700 1.08rem/1.35 var(--serif);color:var(--gold-light);margin-bottom:6px}
+.goldbox .g2{font:700 12px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.deep-acc{max-width:690px;margin:16px auto 0}
+.deep-acc details{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.18)}
+.deep-acc summary{color:#fff}
+.deep-acc .dp{border-top-color:rgba(255,255,255,.15);color:#E9E6DF}
+/* PARA QUEM É / NÃO É (lugar dos bónus) */
+.qual{max-width:900px;margin:0 auto}
+.qual details summary{font-family:var(--serif)}
+.qgrid{display:grid;grid-template-columns:1fr;gap:10px;padding:12px 14px 16px;border-top:1px solid var(--rule)}
+.qc{background:#FFFBF0;border:1px solid #EAD9B8;border-radius:6px;padding:14px 14px;font-size:14.5px;display:flex;gap:10px}
+.qc b{flex:0 0 18px;color:var(--green)}
+.qc.x{background:#FBF4F4;border-color:#EBD3D3}
+.qc.x b{color:var(--accent)}
+.foot-note{text-align:center;font-size:14px;color:var(--muted);margin:16px auto 0;max-width:640px}
+/* TUDO O QUE RECEBES */
+.stack{display:grid;grid-template-columns:1fr;gap:26px;align-items:center;max-width:980px;margin:0 auto}
+.si{list-style:none;padding:0;margin:0}
+.si li{position:relative;padding:0 0 12px 28px}
+.si li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:700;font-size:18px;line-height:1.3}
+.si b{display:block;color:var(--navy);font-size:15.5px}
+.si span{font-size:13.5px;color:var(--muted)}
+.mock2{border-radius:8px;background:linear-gradient(160deg,#F6EEDB,#EFE2C4);padding:22px 14px;display:flex;justify-content:center;align-items:flex-end;gap:10px;box-shadow:0 8px 30px rgba(26,26,46,.1);max-width:440px;margin:0 auto;width:100%}
+.mock2 .a4{width:40%;max-width:170px;padding:8%}
+.mock2 .a4 .k{display:none}
+.mock2 .dev{width:24%;max-width:96px;aspect-ratio:9/18;background:#111;border-radius:12px;padding:5px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.mock2 .dev div{width:100%;height:100%;border-radius:8px;background:#fffdf8;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 8px/1.2 var(--serif);color:var(--navy);text-align:center;padding:4px}
+.mock2 .tab{width:36%;max-width:150px;aspect-ratio:3/4;background:#222;border-radius:10px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.mock2 .tab div{width:100%;height:100%;border-radius:6px;background:linear-gradient(170deg,#1A1A2E,#2b2b4a);color:#F3E6C4;font:700 10px/1.2 var(--serif);display:flex;align-items:center;justify-content:center;text-align:center;padding:6px}
+.once{text-align:center;margin:20px 0 0;font-size:15.5px}
+/* PLANO */
+.plan-note{max-width:560px;margin:0 auto 14px;text-align:center;background:#FBF4E4;border:1px solid #EAD9B8;border-radius:4px;padding:12px 14px;font-size:14.5px}
+.plan-line{text-align:center;font:700 13px/1.4 var(--sans);color:var(--gold-rich);margin:0 0 16px}
+.plan{position:relative;max-width:440px;margin:0 auto;background:linear-gradient(180deg,#FFFBEF,#fff);border:2px solid var(--gold);border-radius:10px;padding:26px 18px 20px}
+.plan .lab{font:700 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-rich);text-align:center}
+.plan h3{text-align:center;font-size:1.35rem;margin:4px 0 14px}
+.plan .ok li{border-bottom:1px solid #EFE9DC;padding:7px 0 7px 22px;margin:0;font-size:14.5px}
+.plan .ok li::before{top:7px;color:var(--green)}
+.price{text-align:center;margin:16px 0 14px}
+.price small{display:block;font-size:13px;color:var(--muted)}
+.price strong{display:block;font:700 2.4rem/1.1 var(--serif);color:var(--navy)}
+.price em{display:block;font-style:normal;font-size:13px;color:var(--muted)}
+.secure{text-align:center;font-size:13px;color:var(--muted);margin:10px 0 0}
+.guar{max-width:560px;margin:24px auto 0;background:#F1F8F2;border:1px solid #CFE6D4;border-radius:4px;padding:20px 18px;text-align:center;color:#1D4F2E}
+.guar svg{width:84px;height:84px;margin:0 auto 10px}
+.guar h3{color:#1D4F2E;font-family:var(--sans);font-size:15.5px;margin-bottom:8px}
+.guar p{font-size:14.5px;margin-bottom:8px}
+/* CHÃO PORTUGUÊS (lugar dos depoimentos) */
+.facts{max-width:760px;margin:0 auto;background:var(--navy);border-radius:4px;padding:14px;display:grid;grid-template-columns:1fr;gap:10px;box-shadow:0 8px 30px rgba(26,26,46,.18)}
+.fact{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 14px;color:#EDEAE2;font-size:14.5px;line-height:1.5}
+.fact b{display:block;color:var(--gold-light);font:700 13px/1.3 var(--sans);letter-spacing:.06em;margin-bottom:4px}
+/* SOBRE */
+.about{text-align:center;padding:44px 0}
+.brandseal{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px}
+.brandseal svg{width:58px;height:58px}
+.brandseal div{text-align:left;font:700 13px/1.3 var(--sans);letter-spacing:.1em;color:var(--navy)}
+.brandseal small{display:block;color:var(--accent);font-size:10.5px;letter-spacing:.14em}
+.about h2{font-size:clamp(1.3rem,3.6vw,1.8rem);max-width:640px;margin:0 auto 12px}
+.about p{max-width:640px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px}
+.about hr{border:0;border-top:1px solid #D9CFB8;max-width:520px;margin:14px auto}
+/* FAQ */
+.faq details{border:0;border-bottom:1px solid var(--rule);border-radius:0;background:transparent;margin:0}
+.faq summary{padding:16px 2px;font-size:15.5px}
+.faq summary::after{content:"+";color:var(--accent);font:700 20px/1 var(--sans)}
+.faq details[open] summary::after{content:"−"}
+.faq .dp{border:0;padding:0 2px 16px;color:var(--muted)}
+.help{text-align:center;margin-top:20px;font-size:14px}
+.help a{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 18px;border:1px solid #ccc;border-radius:999px;text-decoration:none;font-weight:700;color:var(--navy);background:#fff}
+/* CTA FINAL */
+.final{text-align:center}
+.final .imgcard{max-width:340px;margin:0 auto 24px;aspect-ratio:1/1}
+.final h2{max-width:640px;margin:0 auto 14px}
+.final .checks{color:#E9E6DF}
+.final .checks li::before{color:var(--gold-light)}
+.final .big{font:700 1.9rem/1.2 var(--serif);color:#fff;margin:16px 0 6px}
+.final .recap{font-family:var(--serif);color:#F1EEE7;max-width:640px;margin:0 auto 10px;font-size:1.02rem}
+.final .trust{color:#AFAAA0}
+/* JÁ COMPRASTE */
+.post{max-width:560px;margin:0 auto;background:var(--parch);border:1px solid var(--rule);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.post b{color:var(--navy)}
+.post p{margin:0;font-size:14px;color:var(--muted)}
+.post a{white-space:nowrap;border:2px solid var(--navy);border-radius:999px;padding:8px 16px;font:700 13px var(--sans);text-decoration:none;color:var(--navy)}
+/* RODAPÉ */
+footer{background:var(--navy2);color:#9C978C;font-size:13px;padding:36px 0 44px;text-align:center}
+footer .c{max-width:640px}
+footer .verse{font:italic 1.05rem/1.5 var(--serif);color:var(--gold-light);margin-bottom:4px}
+footer a{color:#D7D2C6}
+footer p{margin:0 0 12px}
+.lr{display:inline-block;border:1px solid #D7D2C6;border-radius:4px;padding:4px 8px;font-weight:700;text-decoration:none}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:#D7D2C6;text-decoration:underline;cursor:pointer}
+/* BANNER DE COOKIES (igual à v2.5) */
+.ck{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:2px solid var(--navy);box-shadow:0 -4px 16px rgba(0,0,0,.12);padding:14px 18px calc(14px + env(safe-area-inset-bottom))}
+.ck[hidden]{display:none}
+.ck p{font-size:14px;line-height:1.45;margin:0 auto 10px;max-width:680px}
+.ck .b{display:flex;gap:10px;max-width:680px;margin:0 auto}
+.ck button{flex:1;padding:12px 8px;font:inherit;font-size:15px;font-weight:700;color:var(--navy);background:#fff;border:2px solid var(--navy);border-radius:8px;cursor:pointer}
+@media (min-width:720px){
+section{padding:72px 0}
+.hero{padding:60px 0 56px}
+.grid2{grid-template-columns:1fr 1fr}
+.grid4{grid-template-columns:repeat(3,1fr)}
+.steps{grid-template-columns:repeat(4,1fr)}
+.qs{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;margin:0 auto;padding:0;max-width:900px}
+.swipe{display:none}
+.pills{grid-template-columns:repeat(3,1fr)}
+.qgrid{grid-template-columns:1fr 1fr}
+.stack{grid-template-columns:1.15fr 1fr}
+.facts{grid-template-columns:1fr 1fr}
+.post{flex-direction:row;align-items:center;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+<!-- BANNER DE COOKIES — primeiro no DOM (teclado), fixo no fundo (sem CLS). Reaproveitado da v2.5. -->
+<div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
+<p>Usamos cookies de medição e publicidade (pixel da Meta) só se aceitares. Podes mudar a escolha em «Definições de cookies», no fim da página. <a href="privacidade.html#cookies">Saber mais</a></p>
+<div class="b"><button type="button" data-ck="reject">Rejeitar</button><button type="button" data-ck="accept">Aceitar</button></div>
+</div>
+
+<!-- ORIGINAL: barra «OFERTA ESPECIAL DISPONÍVEL HOJE [data]» → CLONE: mesma barra, só com âncora de preço (sem data nem urgência). -->
+<div class="topbar">17,90 € · pagamento único · <b>em PDF</b></div>
+
+<main>
+<!-- 1 · HERO (original: marca ✝, etiqueta, H1, subtítulo, vídeo, checks, preço, CTA, garantias, selos) -->
+<section class="hero bg-cream">
+<div class="c">
+<div class="mark" aria-hidden="true"><i></i><span>✝</span><i></i></div>
+<span class="tag">Trama Una — Teologia Católica para Leigos</span>
+<h1>Explica a fé que já vives, com o Método da Trama Una</h1>
+<p class="sub">Uma formação de teologia católica para o adulto leigo, escrita em português de Portugal. Estudas cada tema nas três fontes ao mesmo tempo — Escritura, Tradição e Magistério — com Fátima e os santos da terra no sítio certo. Mesmo que a catequese tenha ficado na infância e nunca tenhas aberto um manual de teologia.</p>
+<p class="cue">Vê o vídeo (4 min)</p>
+<!-- VSL: ficheiro de ../vsl/final/vsl-trama-una-16x9.mp4 (1920×1080, 4:00, legendas já gravadas na imagem). preload=metadata + poster + caixa 16:9: sem CLS e sem peso no LCP. -->
+<div class="vframe"><video controls playsinline preload="metadata" poster="vsl-poster.jpg" width="1920" height="1080" aria-label="Vídeo de apresentação da Trama Una"><source src="vsl-trama-una-16x9.mp4" type="video/mp4"></video></div>
+<ul class="checks"><li>Escritura, Tradição e Magistério</li><li>Fátima e os santos da terra</li></ul>
+<div class="offer" aria-label="Preço"><strong>17,90 €</strong><small>Pagamento único</small><span class="small">(IVA incluído) <span class="ph">[IVA incluído: pendente do print do checkout PT]</span></span></div>
+<div class="cta"><a class="btn btn-wide" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+<ul class="trust"><li>✓ Em PDF</li><li>✓ MB Way, Multibanco ou cartão</li><li>✓ 15 dias para desistir</li></ul>
+<p class="small" style="margin:12px auto 0;max-width:560px">17,90 €, uma vez. Sem mensalidade. Sem curso universitário. Sem pretender o selo de uma conferência episcopal.</p>
+<div class="seals"><span class="seal">✝ Escritura · Tradição · Magistério</span><span class="seal">☧ Escrito em português de Portugal</span></div>
+</div>
+</section>
+
+<!-- 2 · POR DENTRO (original: mockup da área de membros + frase + CTA) → CLONE: ilustração própria em CSS do PDF A4 (capa + índice), sem imagens do original. -->
+<section class="bg-white">
+<div class="c">
+<div class="head"><span class="tag">O que recebes</span><h2>Um sítio a que voltar</h2><p class="desc">Não te prometemos um diploma. Prometemos um sítio a que voltar, e um modo de estudar que te ajuda a explicar o que já acreditas.</p></div>
+<figure class="mock" style="margin-left:auto;margin-right:auto">
+<div class="a4 cover" aria-hidden="true"><span class="k">Método da Trama Una</span><span class="t">Trama Una</span><span class="s">Teologia Católica para Leigos</span></div>
+<div class="a4" aria-hidden="true"><span class="k" style="color:var(--accent)">Índice temático</span><ul class="ix"><li><span>As três fontes da fé</span></li><li><span>O Credo</span></li><li><span>Jesus Cristo</span></li><li><span>A Igreja</span></li><li><span>A vida eterna</span></li><li><span>Liturgia e sacramentos</span></li><li><span>Nossa Senhora e Fátima</span></li><li><span>Santos portugueses</span></li><li><span>Plano de estudo</span></li></ul></div>
+<figcaption>Ilustração</figcaption>
+</figure>
+<p class="pd-line">Pagas 17,90 € uma vez e ficas com o PDF. Lês no computador ou no tablet. No telemóvel também dá, com zoom, porque o PDF está em formato A4. Se quiseres, imprimes.</p>
+<div class="cta"><a class="btn" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+<div class="rule"><span>✝</span></div>
+
+<!-- 3 · PARA QUEM É / DESEJO (original: 6 cartões com ícone + imagem de Aparecida) → CLONE: os 6 benefícios da copy + cartão SVG próprio de Fátima (troca cultural da copy). -->
+<section class="bg-parch">
+<div class="c">
+<div class="head"><span class="tag">Para quem é</span><h2>Com a formação Trama Una, podes:</h2></div>
+<div class="grid2">
+<div class="card"><span class="ico">✝</span><span>sair daquela conversa no café com uma resposta tua, serena, alinhada com o que a Igreja ensina — e com a honestidade de dizer «isto não sei» quando for o caso;</span></div>
+<div class="card"><span class="ico">☧</span><span>deixar os recortes soltos no telemóvel e seguir uma linha de estudo em casa, ao teu ritmo;</span></div>
+<div class="card"><span class="ico">✠</span><span>compreender melhor o que acontece na Missa que já frequentas, sem tratares o domingo como um rito opaco;</span></div>
+<div class="card"><span class="ico">✦</span><span>situar Fátima e os santos da terra dentro da fé, não à margem dela;</span></div>
+<div class="card"><span class="ico">⚓</span><span>voltar a um índice claro quando surgir a próxima pergunta da neta, do afilhado ou de ti;</span></div>
+<div class="card"><span class="ico">☧</span><span>estudar em português de Portugal, com o vocabulário que usas na paróquia, não com uma tradução às três pancadas.</span></div>
+</div>
+<div class="imgcard" role="img" aria-label="Ilustração: Senhora do Rosário, Cova da Iria">
+<svg viewBox="0 0 320 240" aria-hidden="true"><g fill="none" stroke="#E8C97A" stroke-width="2"><circle cx="160" cy="70" r="22"/><path d="M160 92 C130 110 122 160 116 200 L204 200 C198 160 190 110 160 92Z"/><path d="M138 70 a22 22 0 0 1 44 0" stroke-width="1"/></g><g fill="#E8C97A">
+<circle cx="160" cy="34" r="2"/><circle cx="140" cy="40" r="1.6"/><circle cx="180" cy="40" r="1.6"/><circle cx="126" cy="54" r="1.4"/><circle cx="194" cy="54" r="1.4"/></g><g fill="#F6E3A8" opacity=".55"><circle cx="70" cy="190" r="3"/><circle cx="84" cy="196" r="3"/><circle cx="236" cy="190" r="3"/><circle cx="250" cy="196" r="3"/></g></svg>
+<p>A Senhora do Rosário, na Cova da Iria — 1917</p>
+</div>
+</div>
+</section>
+
+<!-- 4 · CHEGA DE DÚVIDAS (original: pergunta + 4 cartões com ✓ + parágrafo + CTA) → CLONE: dor em cena concreta da copy, em 4 cartões, e a frase de corte. -->
+<section class="bg-ivory">
+<div class="c">
+<div class="head"><span class="tag">A cena</span><h2>Tu acreditas. Mas as palavras não saem na ordem certa.</h2></div>
+<div class="grid4">
+<div class="vcard"><span class="num">1</span><div><h3>Domingo, no café</h3><p>É domingo. Saíste da Missa na tua paróquia. No café, o teu sobrinho — aquele que já não põe os pés na igreja desde a faculdade — pergunta-te, sem jeito de ofender, porque é que os católicos rezam a Maria.</p></div></div>
+<div class="vcard"><span class="num">2</span><div><h3>«É a nossa fé»</h3><p>Tu acreditas. Rezaste o terço durante anos. Até já foste a Fátima, ou tens essa viagem na cabeça. Mas as palavras não saem na ordem certa. Dizes «é a nossa fé» e mudas de assunto. Ele não insiste. Tu ficas com a frase a dar voltas até à noite.</p></div></div>
+<div class="vcard"><span class="num">3</span><div><h3>À noite, no telemóvel</h3><p>Em casa, pegas no telemóvel. Escreves a pergunta. Encontras cinco respostas diferentes: um vídeo a falar alto, um recorte no grupo da paróquia, um texto que não sabes de onde veio. Fechas o ecrã mais baralhado do que quando começaste.</p></div></div>
+</div>
+<p class="punch">Isto não é falta de fé. É falta de uma linha de estudo.</p>
+<p class="after">A maior parte de nós recebeu a fé na infância e depois viveu-a na prática: a Missa de domingo, o terço, as festas, o 13 de Fátima quando se pode. O estudo ficou às migalhas. Quando alguém pergunta a sério no que acreditamos, sentimos o chão a falhar — não porque duvidemos de Deus, mas porque nunca nos deram um sítio claro a que voltar.</p>
+<div class="cta"><a class="btn" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+
+<!-- 5 · FORMAÇÃO COMPLETA (original: foto da Missa, etiqueta, H2, itálico, 2 linhas douradas, acordeão de 7 áreas, caixa «para que serve», CTA bordô) → CLONE: Método da Trama Una + o que vai dentro em acordeão + «é para ti se». -->
+<section class="bg-white">
+<div class="c">
+<div class="illu" role="img" aria-label="Ilustração: três fios entrelaçados">
+<svg viewBox="0 0 360 360" aria-hidden="true"><g fill="none" stroke-width="7" stroke-linecap="round"><path d="M40 120 C120 60 160 200 240 140 S320 100 330 120" stroke="#1A1A2E"/><path d="M40 160 C120 220 160 80 240 160 S320 180 330 160" stroke="#8B1A1A"/><path d="M40 200 C120 140 160 260 240 200 S320 220 330 200" stroke="#A07830"/></g><text x="180" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="40" fill="#1A1A2E">✝</text></svg>
+<p>Três fios da mesma peça.</p>
+</div>
+<div class="head" style="margin-bottom:0">
+<span class="tag">Método da Trama Una</span>
+<h2>Chama-se Método da Trama Una</h2>
+<p class="lead-i">A Igreja não pediu que tratássemos a Bíblia numa gaveta, a Tradição noutra e o Magistério noutra. São três fios da mesma peça. Quando os separamos, a conversa desfaz-se. Quando os estudamos no mesmo passo, a resposta começa a ter forma.</p>
+<p class="goldline">✝ Escritura, Tradição e Magistério estudados no mesmo passo</p>
+<p class="goldline">O que vai dentro (em PDF, para consulta pessoal):</p>
+</div>
+<div class="acc">
+<details open><summary>A formação escrita, organizada por temas <span class="cue2">Ver temas</span></summary>
+<ul class="dl"><li>as três fontes da fé</li><li>o Credo</li><li>Jesus Cristo</li><li>a Igreja</li><li>a vida eterna</li><li>a liturgia e os sacramentos</li><li>Nossa Senhora, com a mensagem de Fátima a partir de fontes oficiais e citações curtas</li><li>santos portugueses (Santo António, São Francisco e Santa Jacinta Marto, notas sobre a Venerável Lúcia, a Rainha Santa Isabel, São Nuno de Santa Maria)</li></ul></details>
+<details><summary>Plano de estudo <span class="cue2">Ver</span></summary><p class="dp">Um plano de estudo para várias semanas em casa, pensado para quem tem vida normal — trabalho, família, a Missa de domingo — e não para quem vive num seminário.</p></details>
+<details><summary>Índice temático <span class="cue2">Ver</span></summary><p class="dp">Um índice temático, para procurares um ponto sem teres de reler tudo.</p></details>
+</div>
+<div class="usebox">
+<h3>Em cada tema, vês os três fios juntos:</h3>
+<ul class="ok">
+<li>a Missa que já frequentas;</li>
+<li>Nossa Senhora;</li>
+<li>um sacramento;</li>
+<li>um ponto do Credo.</li>
+</ul>
+</div>
+<p class="pd-line">Não é um atalho para parecer teólogo. É uma ordem de leitura para quem já vive a fé e quer compreendê-la em casa, no tempo que tem.</p>
+<div class="cta"><a class="btn btn-red" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+<div class="rule"><span>✝</span></div>
+
+<!-- 6 · COMO FUNCIONA (original: 4 passos numerados + faixa «Por e-mail / Área de Membros / Drive») → CLONE: 4 passos com a entrega neutra da copy v2 + faixa dos meios de pagamento. -->
+<section class="bg-ivory">
+<div class="c">
+<div class="head"><span class="tag">Como funciona</span><h2>Como recebes o acesso</h2><p class="desc">A compra processa-se através da Hotmart.</p></div>
+<ol class="steps">
+<li class="step"><span class="n">1</span><h3>Carregas no botão</h3><p>Vais para o checkout da Hotmart.</p></li>
+<li class="step"><span class="n">2</span><h3>Pagas 17,90 €</h3><p>Uma vez, por MB Way, Multibanco ou cartão.</p></li>
+<li class="step"><span class="n">3</span><h3>Recebes o acesso</h3><p>Assim que o pagamento ficar confirmado, recebes o acesso ao ficheiro em PDF.</p></li>
+<li class="step"><span class="n">4</span><h3>Estudas em casa</h3><p>Descarregas o PDF e segues o plano de estudo, ao teu ritmo.</p></li>
+</ol>
+<div class="chips" aria-label="Formas de pagamento"><span>MB Way</span><span>Multibanco</span><span>Cartão</span></div>
+<p class="small center" style="margin:12px auto 0;max-width:560px">Se pagares por Multibanco, a confirmação pode demorar mais do que no MB Way ou no cartão. O acesso fica disponível depois de o pagamento ficar confirmado.</p>
+</div>
+</section>
+
+<!-- 7 · PERGUNTAS (original: carrossel de 4 perguntas da fé com resposta + CTA) → CLONE: as perguntas que a copy põe em cena, cada uma com o tema do PDF onde se estuda (sem respostas doutrinais novas). Carrossel CSS no telemóvel, grelha 2×2 no desktop. -->
+<section class="bg-parch">
+<div class="c">
+<div class="head"><span class="tag">✝ A próxima pergunta</span><h2>Quando surgir a próxima pergunta, tens um índice claro a que voltar</h2></div>
+<div class="qs">
+<div class="q"><div class="qn">01</div><h3>Porque é que os católicos rezam a Maria?</h3><p>A pergunta do café. Estudas o tema Nossa Senhora com os três fios juntos — Escritura, Tradição e Magistério — e com a mensagem de Fátima a partir de fontes oficiais.</p></div>
+<div class="q"><div class="qn">02</div><h3>O que acontece na Missa que já frequentas?</h3><p>Está no tema da liturgia e dos sacramentos, para não tratares o domingo como um rito opaco.</p></div>
+<div class="q"><div class="qn">03</div><h3>O que dizemos quando rezamos o Credo?</h3><p>O Credo tem tema próprio no PDF, ao lado de Jesus Cristo e da Igreja.</p></div>
+<div class="q"><div class="qn">04</div><h3>O que a Igreja ensina sobre a vida eterna?</h3><p>A vida eterna é um dos temas da formação escrita, com citações curtas e ligações para as fontes oficiais.</p></div>
+</div>
+<p class="swipe">Desliza para o lado →</p>
+<div class="cta"><a class="btn" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+<div class="rule"><span>✝</span></div>
+
+<!-- 8 · BLOCO ESCURO (original: Biblioteca Católica, upsell «só R$ 10 a mais») → CLONE: sem upsell nem order bump (decisão do Funil); o mesmo bloco escuro mostra a transparência da copy: texto próprio, fontes oficiais, «o essencial está aqui». -->
+<section class="bg-deep">
+<div class="c">
+<div class="head"><span class="tag">O texto é nosso</span><h2>Citações curtas, com a fonte, e ligações para o texto integral</h2><p class="desc">O texto é nosso. Traz citações curtas, com indicação da fonte, e ligações para consulta dos documentos onde eles existem em liberdade — no sítio da Santa Sé, no do Santuário de Fátima, no da Conferência Episcopal, quando quiseres ir ao texto integral.</p></div>
+<div class="pills"><div class="pill">Sítio da Santa Sé</div><div class="pill">Santuário de Fátima</div><div class="pill">Conferência Episcopal</div></div>
+<div class="goldbox"><p class="g1">Não há um segundo preço escondido para «desbloquear» o essencial.</p><p class="g2">O essencial está aqui · 17,90 €</p></div>
+<div class="deep-acc"><details><summary>O que não recebes dentro do PDF <span class="cue2">Ver</span></summary><p class="dp">Não recebes o Catecismo, as encíclicas nem a Bíblia completos dentro do PDF. Isso não nos pertence para vender.</p></details></div>
+<div class="cta"><a class="btn btn-gold" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+
+<!-- 9 · BÓNUS (original: 12 bónus com «De R$ X — Hoje: GRÁTIS» em 2 acordeões) → CLONE: não há bónus nem âncoras; o mesmo layout (2 acordeões com cartões) mostra «para quem é / para quem não é» da copy. -->
+<section class="bg-white">
+<div class="c">
+<div class="head"><span class="tag">Com clareza</span><h2>Para quem é — e para quem não é</h2></div>
+<div class="qual acc" style="max-width:900px">
+<details open><summary>Isto é para ti se <span class="cue2">Ver</span></summary>
+<div class="qgrid">
+<div class="qc"><b>✓</b><span>já vives a fé católica (Missa, oração, devoções) e queres compreender o que já acreditas;</span></div>
+<div class="qc"><b>✓</b><span>és mãe, pai, avó, avô, madrinha ou padrinho, e queres explicar a fé em casa com mais chão;</span></div>
+<div class="qc"><b>✓</b><span>a tua formação parou na catequese da infância e nunca soubeste por onde retomar, sem te matriculares numa faculdade;</span></div>
+<div class="qc"><b>✓</b><span>queres uma base de estudo em português de Portugal, com Fátima e os santos da terra no lugar certo.</span></div>
+</div></details>
+<details open><summary>Isto não é para ti se <span class="cue2">Ver</span></summary>
+<div class="qgrid">
+<div class="qc x"><b>✕</b><span>procuras um curso oficial da tua diocese, da Conferência Episcopal Portuguesa ou do Secretariado Nacional da Educação Cristã — isto é um projeto independente, leigo, sem vínculo a essas instituições;</span></div>
+<div class="qc x"><b>✕</b><span>queres um certificado académico, uma equivalência universitária ou um título que possas apresentar como habilitação;</span></div>
+<div class="qc x"><b>✕</b><span>esperas receber, dentro do PDF, o Catecismo da Igreja Católica, as encíclicas ou uma Bíblia completos;</span></div>
+<div class="qc x"><b>✕</b><span>precisas de material pronto para a catequese paroquial segundo o itinerário oficial — isso é outro trabalho, e não o substituímos;</span></div>
+<div class="qc x"><b>✕</b><span>procuras uma promessa de santidade rápida ou de converter a família. Isso não se vende.</span></div>
+</div></details>
+</div>
+<p class="foot-note">Se te reconheceste no primeiro grupo, continua. Se te reconheceste no segundo, é melhor não comprares.</p>
+</div>
+</section>
+
+<!-- 10 · TUDO O QUE RECEBES (original: lista de 7 itens com ✓ + mockup + «num único pagamento» + CTA) → CLONE: value stack real da copy + ilustração CSS (PDF A4 em computador/tablet/telemóvel). -->
+<section class="bg-parch">
+<div class="c">
+<div class="head"><span class="tag">Tudo incluído</span><h2>O que vai dentro, por 17,90 €</h2></div>
+<div class="stack">
+<ul class="si">
+<li><b>A formação escrita, organizada por temas</b><span>As três fontes da fé, o Credo, Jesus Cristo, a Igreja, a vida eterna, a liturgia e os sacramentos.</span></li>
+<li><b>O Método da Trama Una</b><span>Escritura, Tradição e Magistério no mesmo passo, em cada tema.</span></li>
+<li><b>Nossa Senhora e Fátima</b><span>Com a mensagem de Fátima a partir de fontes oficiais e citações curtas.</span></li>
+<li><b>Santos portugueses</b><span>Santo António, São Francisco e Santa Jacinta Marto, notas sobre a Venerável Lúcia, a Rainha Santa Isabel, São Nuno de Santa Maria.</span></li>
+<li><b>Plano de estudo para várias semanas</b><span>Pensado para quem tem vida normal — trabalho, família, a Missa de domingo.</span></li>
+<li><b>Índice temático</b><span>Para procurares um ponto sem teres de reler tudo.</span></li>
+<li><b>Em PDF, formato A4</b><span>Lês no computador ou no tablet. No telemóvel também dá, com zoom. Se quiseres, imprimes.</span></li>
+</ul>
+<div class="mock2" role="img" aria-label="Ilustração: o PDF no tablet, em papel A4 e no telemóvel">
+<div class="tab"><div>Trama Una</div></div>
+<div class="a4 cover"><span class="t" style="font-size:14px">Trama Una</span><span class="s">Teologia Católica para Leigos</span></div>
+<div class="dev"><div>Trama Una<br><span style="font-weight:400;font-size:7px">PDF · A4</span></div></div>
+</div>
+</div>
+<p class="once">Pagas <strong>17,90 €</strong> uma vez e ficas com o PDF.</p>
+<div class="cta"><a class="btn" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+</div>
+</section>
+<div class="rule"><span>✝</span></div>
+
+<!-- 11 · PLANOS + GARANTIA (original: 2 planos, cronómetro, preços riscados, selo 7 dias) → CLONE: 1 só cartão (há um só produto), sem cronómetro nem riscado; selo próprio de 15 dias. -->
+<section class="bg-white" id="oferta">
+<div class="c">
+<div class="head"><span class="tag">A oferta</span><h2>A formação Trama Una custa 17,90 €</h2></div>
+<p class="plan-note"><strong>Pagas uma vez. Não há mensalidade.</strong> 17,90 € ronda o preço de um almoço fora de casa. Não é o preço de um curso universitário, e não se apresenta como tal.</p>
+<p class="plan-line">Pagamento único · Em PDF · 15 dias para desistir</p>
+<div class="plan">
+<div class="lab">Para quem já vive a fé</div>
+<h3>Trama Una — Teologia Católica para Leigos</h3>
+<ul class="ok">
+<li><strong>A formação escrita, organizada por temas</strong></li>
+<li>Método da Trama Una</li>
+<li>Nossa Senhora e Fátima, santos portugueses</li>
+<li>Plano de estudo para várias semanas</li>
+<li>Índice temático</li>
+<li>Em PDF, para consulta pessoal</li>
+</ul>
+<div class="price"><small>Pagamento único</small><strong>17,90 €</strong><em>(IVA incluído) <span class="ph">[IVA incluído: pendente do print do checkout PT]</span></em></div>
+<a class="btn btn-green" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a>
+<p class="secure">Pagamento por MB Way, Multibanco ou cartão, na Hotmart</p>
+</div>
+<p class="small center" style="max-width:560px;margin:14px auto 0">Assim que o pagamento ficar confirmado, recebes o acesso ao ficheiro em PDF, para o descarregares e consultares quando quiseres.</p>
+<div class="guar" id="garantia">
+<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#A07830"/><circle cx="50" cy="50" r="39" fill="none" stroke="#E8C97A" stroke-width="2" stroke-dasharray="3 3"/><text x="50" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#fff">15</text><text x="50" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#fff">DIAS</text></svg>
+<h3>Garantia</h3>
+<p>A compra processa-se através da Hotmart.</p>
+<p>Tens <strong>15 dias</strong>, a contar da compra, para desistires sem teres de indicar o motivo e pedires o reembolso, nos termos da Hotmart.</p>
+<p style="margin:0"><strong>Tens tempo, dentro do prazo real da plataforma, para ler o material e decidir com calma.</strong></p>
+</div>
+</div>
+</section>
+<div class="rule"><span>✝</span></div>
+
+<!-- 12 · DEPOIMENTOS (original: imagem com 7 comentários de «alunos») → CLONE: NÃO há depoimentos (proibido inventar). O mesmo lugar, com moldura escura, mostra prova factual verificável da copy: o chão português. -->
+<section class="bg-ivory">
+<div class="c">
+<div class="head"><span class="tag">Prova factual</span><h2>A trama tem chão português</h2><p class="desc">Isto não substitui Roma. Situa o estudo na fé tal como se vive aqui.</p></div>
+<div class="facts">
+<div class="fact"><b>1917 · Cova da Iria</b>A Senhora do Rosário, na Cova da Iria, a 13 de maio e a 13 de outubro de 1917.</div>
+<div class="fact"><b>1930 · Leiria</b>A aprovação diocesana do culto a 13 de outubro de 1930, pelo bispo de Leiria, D. José Alves Correia da Silva.</div>
+<div class="fact"><b>2017 · Santuário de Fátima</b>São Francisco Marto e Santa Jacinta Marto, canonizados pelo Papa Francisco a 13 de maio de 2017, no adro do Santuário.</div>
+<div class="fact"><b>Irmã Lúcia</b>A Irmã Lúcia, que a Igreja declara Venerável.</div>
+<div class="fact"><b>1646 · Padroeira</b>A Imaculada Conceição, tomada por padroeira do Reino por D. João IV a 25 de março de 1646.</div>
+<div class="fact"><b>Santos da terra</b>Santo António, nascido em Lisboa, Doutor da Igreja. A Rainha Santa Isabel. São Nuno de Santa Maria.</div>
+</div>
+<p class="foot-note">Esta foi escrita para se ler em Portugal, sem jeito de tradução.</p>
+</div>
+</section>
+
+<!-- 13 · SOBRE O PROJETO (original: selo + H2 + texto + aviso de independência) → CLONE: selo SVG próprio + texto do rodapé da copy. -->
+<section class="about bg-parch">
+<div class="c">
+<div class="brandseal"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="28" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="30" cy="30" r="23" fill="none" stroke="#C9A84C"/><path d="M30 14v32M20 24h20" stroke="#1A1A2E" stroke-width="2.4"/></svg><div>EDIÇÕES TRAMA UNA<small>PROJETO INDEPENDENTE</small></div></div>
+<h2>Uma formação independente, para estudo pessoal da fé católica</h2>
+<p>Trama Una — formação independente de estudo pessoal da fé católica. Sem vínculo com a Conferência Episcopal Portuguesa, o Secretariado Nacional da Educação Cristã, dioceses, paróquias ou universidades. Não substitui a catequese oficial nem um curso académico.</p>
+<hr>
+<p class="small" style="margin:0 auto">As citações de documentos da Igreja e de fontes do Santuário de Fátima são curtas e identificadas; os textos integrais pertencem aos respetivos titulares. Consulta os originais nos sítios oficiais.</p>
+</div>
+</section>
+
+<!-- 14 · FAQ (original: 8 perguntas em acordeão + botões e-mail/WhatsApp) → CLONE: as 11 perguntas da copy + só o botão de e-mail. -->
+<section class="bg-white faq">
+<div class="c n">
+<div class="head"><span class="tag">Dúvidas frequentes</span><h2>Perguntas frequentes</h2></div>
+<details><summary>Isto é um curso oficial da Igreja em Portugal?</summary><p class="dp">Não. É uma formação independente, escrita para estudo pessoal da fé católica. Não tem aprovação, reconhecimento nem vínculo com a Conferência Episcopal Portuguesa, o SNEC, uma diocese, uma paróquia ou uma universidade.</p></details>
+<details><summary>Vou receber o Catecismo, a Bíblia ou as encíclicas completos?</summary><p class="dp">Não. O conteúdo é texto próprio, com citações curtas identificadas e ligações para as fontes oficiais, onde podes consultar o documento integral. Não empacotamos obras protegidas para venda.</p></details>
+<details><summary>Preciso de já saber teologia?</summary><p class="dp">Não. Precisas da fé que já tens e da vontade de estudar um pouco em casa. A linguagem é de leigo para leigo, sem latim desnecessário.</p></details>
+<details><summary>Há certificado?</summary><p class="dp">Não há certificado académico nem diploma reconhecido. Não o prometemos.</p></details>
+<details><summary>Como recebo o material?</summary><p class="dp">Assim que o pagamento ficar confirmado, recebes o acesso para descarregares o ficheiro em PDF.</p></details>
+<details><summary>Posso imprimir?</summary><p class="dp">Sim, para uso pessoal. Não republicar, não vender, não distribuir como se fosse material oficial da paróquia.</p></details>
+<details><summary>Que formas de pagamento aceitam?</summary><p class="dp">MB Way, Multibanco e cartão.</p></details>
+<details><summary>Quanto custa?</summary><p class="dp">17,90 €, pagamento único.</p></details>
+<details><summary>E se não for o que esperava?</summary><p class="dp">Podes pedir o reembolso dentro do prazo e das condições da Hotmart (15 dias).</p></details>
+<details><summary>A formação fala de Fátima. Copia as Memórias da Irmã Lúcia?</summary><p class="dp">Não. Parte de factos públicos e de fontes oficiais, com citações curtas, e remete-te para o Santuário e para as edições licenciadas quando quiseres ir mais longe.</p></details>
+<details><summary>Substitui a catequese da minha paróquia ou o acompanhamento de um padre?</summary><p class="dp">Não. É um auxílio de estudo pessoal. A vida da paróquia, os sacramentos e o acompanhamento pastoral continuam no sítio deles.</p></details>
+<p class="help"><strong>Precisas de ajuda?</strong> Escreve para o apoio.<br><a href="mailto:suporte@tramauna.pt">✉ suporte@tramauna.pt</a></p>
+</div>
+</section>
+
+<!-- 15 · CTA FINAL (original: fundo escuro, foto de mãos com terço, H2, checks, preço, CTA dourado, link «só o curso», garantias) → CLONE: ilustração SVG própria do terço + recapitulação da copy; sem o link de plano alternativo. -->
+<section class="bg-deep final">
+<div class="c">
+<div class="imgcard" role="img" aria-label="Ilustração: terço">
+<svg viewBox="0 0 300 300" aria-hidden="true"><g transform="translate(22,-14) scale(.85)"><g fill="#C9A84C"><circle cx="150" cy="60" r="5"/><circle cx="178" cy="64" r="5"/><circle cx="203" cy="76" r="5"/><circle cx="222" cy="96" r="5"/><circle cx="232" cy="121" r="5"/><circle cx="232" cy="147" r="5"/><circle cx="222" cy="172" r="5"/><circle cx="203" cy="190" r="5"/><circle cx="122" cy="64" r="5"/><circle cx="97" cy="76" r="5"/><circle cx="78" cy="96" r="5"/><circle cx="68" cy="121" r="5"/><circle cx="68" cy="147" r="5"/><circle cx="78" cy="172" r="5"/><circle cx="97" cy="190" r="5"/><circle cx="122" cy="200" r="5"/><circle cx="178" cy="200" r="5"/><circle cx="150" cy="206" r="6"/><circle cx="150" cy="226" r="4"/><circle cx="150" cy="240" r="4"/></g><path d="M150 248v34M138 260h24" stroke="#E8C97A" stroke-width="5" stroke-linecap="round"/></g></svg>
+<p>Explica a fé que já vives</p>
+</div>
+<h2>Se chegaste até aqui, já sabes do que se trata.</h2>
+<p class="recap">Não é um curso da Conferência Episcopal. Não é um atalho para um diploma. Não é uma pilha de documentos oficiais dentro de um PDF.</p>
+<p class="recap">É uma formação para o adulto que já vive a fé e quer saber explicá-la — com uma linha de estudo, em português de Portugal, e com o Método da Trama Una.</p>
+<ul class="checks"><li>Pagamento único</li><li>Em PDF</li><li>Plano de estudo</li><li>Índice temático</li><li>15 dias para desistir</li></ul>
+<p class="big">17,90 €</p>
+<p class="small" style="color:#C9C5BC">Uma vez. MB Way, Multibanco ou cartão.</p>
+<div class="cta"><a class="btn btn-gold btn-wide" data-checkout href="https://pay.hotmart.com/C108510450W">SIM, QUERO EXPLICAR A MINHA FÉ</a></div>
+<ul class="trust"><li>A compra processa-se através da Hotmart</li><li>Acesso após confirmação do pagamento</li><li>Garantia de 15 dias</li></ul>
+</div>
+</section>
+
+<!-- 16 · JÁ COMPROU? (original: entrada na Área de Membros) → CLONE: não há área de membros confirmada; caixa curta com o contacto de apoio (entrega neutra). -->
+<section class="bg-white" style="padding:40px 0">
+<div class="c">
+<div class="head" style="margin-bottom:16px"><span class="tag">Já compraste?</span><h2 style="font-size:clamp(1.25rem,3.4vw,1.7rem)">Dúvidas sobre o acesso</h2></div>
+<div class="post"><div><b>Apoio Trama Una</b><p>Assim que o pagamento ficar confirmado, recebes o acesso ao ficheiro em PDF. Se tiveres alguma dúvida, escreve-nos.</p></div><a href="mailto:suporte@tramauna.pt">ESCREVER AO APOIO</a></div>
+</div>
+</section>
+</main>
+
+<!-- RODAPÉ (original: versículo + aviso + ©) → CLONE: versículo (1 Pe 3,15) + rodapé legal da v2.5. -->
+<footer>
+<div class="c">
+<p class="verse">«Estai sempre prontos a responder […] a todo aquele que vos pedir a razão da vossa esperança.»</p>
+<p>(1 Pe 3,15)</p>
+<p>Trama Una — formação independente de estudo pessoal da fé católica. Sem vínculo com a Conferência Episcopal Portuguesa, o Secretariado Nacional da Educação Cristã, dioceses, paróquias ou universidades.</p>
+<p>Vendido por: Edições Trama Una<br>Pagamento, faturação e reembolsos processados pela Hotmart<br>Apoio: <a href="mailto:suporte@tramauna.pt">suporte@tramauna.pt</a></p>
+<p><a href="privacidade.html">Política de privacidade</a> · <a href="termos.html">Termos e condições</a> · <a href="termos.html#livre-resolucao">Livre resolução e reembolso</a> · <button type="button" class="linkbtn" data-cookie-settings>Definições de cookies</button></p>
+<p><a class="lr" href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener nofollow">Livro de Reclamações</a></p>
+<p>Em caso de litígio de consumo, o consumidor pode recorrer a uma entidade de Resolução Alternativa de Litígios de consumo. A lista destas entidades está disponível no Portal do Consumidor, em <a href="https://www.consumidor.gov.pt" rel="nofollow">www.consumidor.gov.pt</a>.</p>
+<p>© 2026 Edições Trama Una. Todos os direitos reservados.</p>
+</div>
+</footer>
+
+<!-- Banner de cookies (v2.5) -->
+<script>
+(function(){var el=document.getElementById("ck");if(!el)return;
+function get(){try{var c=JSON.parse(localStorage.getItem(CONSENT_KEY)||"null");return(c&&c.v===CONSENT_VERSION)?c:null}catch(e){return null}}
+var opener=null;
+function open(ev){opener=(ev&&ev.currentTarget&&ev.currentTarget.nodeType===1)?ev.currentTarget:null;el.hidden=false;var r=el.querySelector('[data-ck="reject"]');if(r)r.focus({preventScroll:true})}
+function save(ch){try{localStorage.setItem(CONSENT_KEY,JSON.stringify({choice:ch,date:new Date().toISOString(),v:CONSENT_VERSION}))}catch(e){}}
+function delFb(){var n=["_fbp","_fbc"],d=location.hostname;for(var i=0;i<n.length;i++){document.cookie=n[i]+"=; Max-Age=0; path=/";document.cookie=n[i]+"=; Max-Age=0; path=/; domain=."+d}}
+el.addEventListener("click",function(ev){var ch=ev.target&&ev.target.getAttribute("data-ck");if(!ch)return;
+save(ch);el.hidden=true;if(opener){opener.focus({preventScroll:true});opener=null}
+if(ch==="accept"){tuLoadPixel()}else{if(window.fbq){fbq("consent","revoke")}delFb()}});
+var s=document.querySelectorAll("[data-cookie-settings]");for(var i=0;i<s.length;i++)s[i].addEventListener("click",open);
+if(!get())open();})();
+</script>
+<!-- CHECKOUT: aplica CHECKOUT_URL a todos os botões e tira as etiquetas amarelas. -->
+<script>
+(function(){if(!CHECKOUT_URL||CHECKOUT_URL==="#CHECKOUT_HOTMART")return;
+var L=document.querySelectorAll("a[data-checkout]");for(var i=0;i<L.length;i++)L[i].setAttribute("href",CHECKOUT_URL);
+var T=document.querySelectorAll(".ph-checkout");for(var j=0;j<T.length;j++)T[j].parentNode.removeChild(T[j]);})();
+</script>
+<!-- UTM: repassa utm_*, src e sck da URL para todos os a[data-checkout]. -->
+<script>
+(function(){try{
+var K=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","src","sck"];
+var q=new URLSearchParams(location.search),has=false;
+for(var i=0;i<K.length;i++){if(q.get(K[i])){has=true;break}}
+if(!has)return;
+var L=document.querySelectorAll("a[data-checkout]");
+for(var j=0;j<L.length;j++){
+var a=L[j],h=a.getAttribute("href");if(!h)continue;
+var u=new URL(h,location.origin+location.pathname);
+for(var k=0;k<K.length;k++){var v=q.get(K[k]);if(v&&!u.searchParams.has(K[k]))u.searchParams.set(K[k],v)}
+a.href=u.href}
+}catch(e){}})();
+</script>
+</body>
+</html>
